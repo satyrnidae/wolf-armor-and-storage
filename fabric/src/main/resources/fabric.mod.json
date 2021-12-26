@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "wolfarmor",
+  "version": "${version}",
+  "name": "Wolf Armor and Storage",
+  "description": "Turns wolves into the adventuring buddies they were always meant to be!",
+  "authors": [
+    "Isabel Maskrey"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/wolf-armor-and-storage",
+    "sources": "https://github.com/satyrnidae/wolf-armor-and-storage"
+  },
+  "license": "MIT",
+  "icon": "assets/wolfarmor/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.satyrn.wolfarmor.fabric.WolfArmorModFabric"
+    ]
+  },
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.16.5",
+    "architectury": ">=1.26.40"
+  }
+}

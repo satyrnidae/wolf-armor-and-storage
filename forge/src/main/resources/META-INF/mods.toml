@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[36,)"
+issueTrackerURL = "https://github.com/satyrnidae/wolf-armor-and-storage/issues"
+license = "MIT"
+
+[[mods]]
+modId = "wolfarmor"
+version = "${version}"
+displayName = "Wolf Armor and Storage"
+authors = "Isabel Maskrey"
+description = '''
+Turns wolves into the adventuring buddies they were always meant to be!
+'''
+logoFile = "assets/wolfarmor/icon.png"
+
+[[dependencies.wolfarmor]]
+modId = "forge"
+mandatory = true
+versionRange = "[36,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.wolfarmor]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.16.5,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.wolfarmor]]
+modId = "architectury"
+mandatory = true
+versionRange = "[1.26.40,)"
+ordering = "AFTER"
+side = "BOTH"
