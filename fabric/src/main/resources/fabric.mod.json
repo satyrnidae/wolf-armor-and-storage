@@ -16,9 +16,12 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.satyrn.wolfarmor.fabric.WolfArmorModFabric"
+      "dev.satyrn.wolfarmor.fabric.FabricMod"
     ]
   },
+  "mixins": [
+    "mixin.wolfarmor-common.json"
+  ],
   "depends": {
     "fabric": "*",
     "minecraft": ">=1.16.5",
