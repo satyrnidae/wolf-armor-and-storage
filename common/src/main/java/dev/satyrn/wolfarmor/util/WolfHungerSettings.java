@@ -20,6 +20,11 @@ public enum WolfHungerSettings {
      */
     DIFFICULTY_DEPENDANT,
     /**
+     * Hunger will damage a wolf to four hearts, or the same health as a wild wolf.
+     * This matches default hunger functionality in Wolf Armor and Storage Legacy.
+     */
+    LEGACY,
+    /**
      * Hunger is only used to heal a wolf.
      * <p>
      * A low-hunger wolf will not be damaged by hunger, and hunger does not deplete unless the wolf is

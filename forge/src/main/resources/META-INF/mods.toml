@@ -11,7 +11,7 @@ authors = "Isabel Maskrey"
 description = '''
 Turns wolves into the adventuring buddies they were always meant to be!
 '''
-logoFile = "assets/wolfarmor/icon.png"
+logoFile = "logo.png"
 
 [[dependencies.wolfarmor]]
 modId = "forge"

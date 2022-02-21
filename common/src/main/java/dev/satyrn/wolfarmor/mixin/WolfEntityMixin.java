@@ -25,7 +25,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  */
 @Mixin(WolfEntity.class)
 public class WolfEntityMixin implements ArmoredWolfEntity, InventoryChangedListener {
-    private final WolfEntity asWolf = (WolfEntity)(Object)this;
     private ModConfiguration configuration;
     private SimpleInventory items;
 
@@ -59,14 +58,18 @@ public class WolfEntityMixin implements ArmoredWolfEntity, InventoryChangedListe
         return false;
     }
 
+    private WolfEntity asWolf() {
+        return (WolfEntity) (Object) this;
+    }
+
     @Override
     public ItemStack getChest() {
-        return this.asWolf.getDataTracker().get(CustomEntityData.CHEST);
+        return this.asWolf().getDataTracker().get(CustomEntityData.CHEST);
     }
 
     @Override
     public void setChest(final ItemStack stack) {
-        this.asWolf.getDataTracker().set(CustomEntityData.CHEST, stack);
+        this.asWolf().getDataTracker().set(CustomEntityData.CHEST, stack);
     }
 
     @Override
@@ -129,7 +132,7 @@ public class WolfEntityMixin implements ArmoredWolfEntity, InventoryChangedListe
 
     @Inject(method = "initDataTracker", at = @At("TAIL"))
     private void injectInitDataTracker(CallbackInfo ci) {
-        this.asWolf.getDataTracker().startTracking(CustomEntityData.CHEST, ItemStack.EMPTY);
+        this.asWolf().getDataTracker().startTracking(CustomEntityData.CHEST, ItemStack.EMPTY);
     }
 
     static {

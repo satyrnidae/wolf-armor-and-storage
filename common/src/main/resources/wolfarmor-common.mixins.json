@@ -5,6 +5,8 @@
   "client": [
   ],
   "mixins": [
+    "EnchantmentMixin",
+    "WolfEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

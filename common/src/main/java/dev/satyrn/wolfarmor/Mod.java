@@ -5,6 +5,7 @@ import dev.architectury.registry.level.GameRuleFactory;
 import dev.architectury.registry.level.GameRuleRegistry;
 import dev.architectury.registry.registries.Registries;
 import dev.satyrn.wolfarmor.config.ModConfiguration;
+import dev.satyrn.wolfarmor.item.ModItems;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.minecraft.world.GameRules;
@@ -22,5 +23,6 @@ public class Mod {
         RULE_ALLOW_WOLF_STARVATION = GameRuleRegistry.register(MOD_ID + ":allowWolfStarvation", GameRules.Category.MOBS, GameRuleFactory.createBooleanRule(true));
 
         AutoConfig.register(ModConfiguration.class, JanksonConfigSerializer::new);
+        ModItems.registerItems();
     }
 }

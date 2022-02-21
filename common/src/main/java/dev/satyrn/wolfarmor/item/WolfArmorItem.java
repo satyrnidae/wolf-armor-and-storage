@@ -1,13 +1,14 @@
 package dev.satyrn.wolfarmor.item;
 
-import com.google.common.collect.ImmutableBiMap;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
-import dev.satyrn.wolfarmor.entity.passive.ArmoredWolfEntity;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.DispenserBehavior;
 import net.minecraft.block.dispenser.ItemDispenserBehavior;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentTarget;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
@@ -32,7 +33,7 @@ import java.util.UUID;
  * @author Isabel Maskrey
  * @since 4.0.0
  */
-public class WolfArmorItem extends Item {
+public class WolfArmorItem extends Item implements CustomEnchantableItem {
     private static final UUID MODIFIER = UUID.fromString("aaca9972-43f4-4b94-b546-b344bbb1fa74");
     /**
      * Custom behavior to equip wolves with armor from a dispenser.
@@ -112,5 +113,15 @@ public class WolfArmorItem extends Item {
 
             return true;
         }
+    }
+
+    @Override
+    public boolean canApplyEnchantment(ItemStack stack, Enchantment enchantment) {
+        if (enchantment == Enchantments.SWEEPING) {
+            return false;
+        }
+        final EnchantmentTarget type = enchantment.type;
+        return type == EnchantmentTarget.BREAKABLE || type == EnchantmentTarget.WEAPON || type == EnchantmentTarget.ARMOR
+                || type == EnchantmentTarget.ARMOR_CHEST || type == EnchantmentTarget.ARMOR_FEET;
     }
 }

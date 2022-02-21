@@ -3,7 +3,7 @@ plugins {
 }
 loom {
     forge {
-        mixinConfig "mixins.wolfarmor-common.json"
+        mixinConfig "wolfarmor-common.mixins.json"
     }
 }
 

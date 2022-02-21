@@ -17,14 +17,24 @@
   "entrypoints": {
     "main": [
       "dev.satyrn.wolfarmor.fabric.FabricMod"
+    ],
+    "modmenu": [
+      "dev.satyrn.wolfarmor.fabric.client.ModMenuApiImpl"
     ]
   },
   "mixins": [
-    "mixin.wolfarmor-common.json"
+    "wolfarmor-common.mixins.json"
   ],
   "depends": {
     "fabric": "*",
-    "minecraft": ">=1.16.5",
-    "architectury": ">=1.26.40"
+    "minecraft": ">=1.18",
+    "architectury": ">=3.6.15"
+  },
+  "custom": {
+    "modmenu":{
+      "links": {
+        "modmenu.discord": "https://discord.gg/t8c4E2A"
+      }
+    }
   }
 }
