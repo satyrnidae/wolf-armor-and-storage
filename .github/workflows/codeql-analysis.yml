@@ -39,6 +39,10 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      
+    - name: make gradle wrapper executable
+      if: ${{ runner.os != 'Windows' }}
+      run: chmod +x ./gradlew
 
     - name: Clean project
       run: ./gradlew --no-daemon clean
